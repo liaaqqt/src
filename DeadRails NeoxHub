@@ -24,7 +24,7 @@
 --            "&hwid=" .. HttpService:UrlEncode(hwid) .. "&device=" .. HttpService:UrlEncode(deviceType) .. 
 --            "&userId=" .. HttpService:UrlEncode(userId)
 --
---        local webhookURL = "https://discord.com/api/webhooks/1348698856686354443/P7iQau93NX-q6PRebWVrscXVYXl3abnROXy7I9KBalXYHrYdHPQNweq8k1O5f7jNhB3V"
+--        local webhookURL = "https://discord.com/api/webhooks/1376916043422896168/ttJmSHRz4ncxoIL-zqYMsqy4ZiyvX1MMlWehA1h7RzqMJLs3usN4K17Gtsll09EnP68n"
 --
 --        local function incrementExecutionCount()
 --            local success, response = pcall(function()
@@ -39,9 +39,9 @@
 --
 --        local function sendExecutionLog(executionCount)
 --            local data = {
---                ["username"] = "Neox Hub Logs",
+--                ["username"] = "VenomX Logs",
 --                ["embeds"] = {{
---                    ["title"] = "Neox Hub Executed!",
+--                    ["title"] = "VenomX Executed!",
 --                    ["description"] = "A user has officially executed Neox Hub",
 --                    ["color"] = tonumber(0x00FF00),
 --                    ["fields"] = {
@@ -50,7 +50,7 @@
 --                        {["name"] = "Game", ["value"] = "```" .. gameName .. "```", ["inline"] = true},
 --                        {["name"] = "Device", ["value"] = "```" .. deviceType .. "```", ["inline"] = true}
 --                    },
---                    ["footer"] = {["text"] = "Thanks for using Neox Hub!"}
+--                    ["footer"] = {["text"] = "Thanks for using VenomX!"}
 --                }}
 --            }
 --
@@ -81,7 +81,7 @@
 --end)
 local Neox = loadstring(game:HttpGet("https://paste.ee/r/yXMTP8kW"))()
 local Window = Neox:CreateWindow({
-    Title = "NEOX HUB | Dead Rails v1.7",
+    Title = "VenomX | Dead Rails v1.7",
     SubTitle = "",
     TabWidth = 120,
     Size = UDim2.fromOffset(600, 450),
@@ -105,14 +105,14 @@ Window:SelectTab(1)
 local Section = Tabs.Home:AddSection("Executor: " .. (identifyexecutor() or "Unknown Executor"))
 local Section = Tabs.Home:AddSection("")
 Tabs.Home:AddButton({
-    Title = "Join our discord",
-    Description = "Click on this button to copy the invite link!",
+    Title = "Did you like my script? :D",
+    Description = "Click on this button to vote!",
     Callback = function()
-        local inviteLink = "https://discord.gg/99UuEwM9sX"
+        local inviteLink = "luvq_lia"
         
         if setclipboard then
             setclipboard(inviteLink)
-            print("bro coming to our discord yay!")
+            print("Ty!")
         else
             print("setclipboard function not available")
         end
