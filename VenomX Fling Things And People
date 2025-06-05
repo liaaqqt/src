@@ -908,7 +908,7 @@ local Window = Rayfield:CreateWindow({
     Name = "Venom X",
     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
     LoadingTitle = "Venom X Loaded",
-    LoadingSubtitle = "by Chill and NovaX",
+    LoadingSubtitle = "by luvq_lia",
     Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
  
     DisableRayfieldPrompts = false,
@@ -948,22 +948,12 @@ local DefanseTab = Window:CreateTab("Anti Grab", 10734951847)
 local BlobmanTab = Window:CreateTab("Blob Man", 10709782230)
 local FunTab = Window:CreateTab("Fun / Troll", 10734964441)
 local ScriptTab = Window:CreateTab("Script", 10734943448)
-local AuraTab = Window:CreateTab("Auras", 10723396107)
-local ExplosionTab = Window:CreateTab("Explosions", 10709818996)
-local KeybindsTab = Window:CreateTab("Keybinds", 10723416765)
 
 local Paragraph = homeTab:CreateParagraph({Title = "UI / Rayfield", Content = "Rayfield library by sirius"})
 local Divider = homeTab:CreateDivider()
-local Paragraph = homeTab:CreateParagraph({Title = "Home!", Content = "Welcome to Venom X! "..Player.Name.." Thanks for useing script!"})
+local Paragraph = homeTab:CreateParagraph({Title = "Home!", Content = "Welcome to Venom X! "..Player.Name.." Thanks for using my script!"})
 
-local Label = homeTab:CreateLabel("Chill Server / Discord", 10709797725, Color3.fromRGB(10, 10, 10), false) -- Title, Icon, Color, IgnoreTheme
-
-local Button = homeTab:CreateButton({
-    Name = "Chill Server",
-    Callback = function()
-        setclipboard("discord.gg/BKU2WH7evF")
-    end,
- })
+local Label = homeTab:CreateLabel("only works in ftap / Ftap", 10709797725, Color3.fromRGB(10, 10, 10), false) -- Title, Icon, Color, IgnoreTheme
 
 local Paragraph = homeTab:CreateParagraph({Title = "Info Log", Content = "Script Update log and Discord Update log"})
 local Divider = homeTab:CreateDivider()
