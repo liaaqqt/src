@@ -908,7 +908,7 @@ local Window = Rayfield:CreateWindow({
     Name = "Venom X",
     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
     LoadingTitle = "Venom X Loaded",
-    LoadingSubtitle = "by Chill and NovaX",
+    LoadingSubtitle = "by luvq_lia",
     Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
  
     DisableRayfieldPrompts = false,
@@ -992,29 +992,33 @@ local Slider = GrabTab:CreateSlider({
     Flag = "StrengthToggle",
     Callback = function(enabled)
         if enabled then
-            strengthConnection = workspace.ChildAdded:Connect(function(model)
-                if model.Name == "GrabParts" then
-                    local partToImpulse = model.GrabPart.WeldConstraint.Part1
-                    if partToImpulse then
-                        local velocityObj = Instance.new("BodyVelocity", partToImpulse)
-                        model:GetPropertyChangedSignal("Parent"):Connect(function()
-                            if not model.Parent then
-                                if UserInputService:GetLastInputType() == Enum.UserInputType.MouseButton2 then
-                                    velocityObj.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-                                    velocityObj.Velocity = workspace.CurrentCamera.CFrame.LookVector * _G.strength
-                                    Debris:AddItem(velocityObj, 1)
-                                else
-                                    velocityObj:Destroy()
-                                end
-                            end
-                        end)
-                    end
-                end
-            end)
-        elseif strengthConnection then
-            strengthConnection:Disconnect()
-        end
-    end
+            w.ChildAdded:Connect(function(model)
+	if model.Name == "GrabParts" then
+		local part_to_impulse = model["GrabPart"]["WeldConstraint"].Part1
+
+		if part_to_impulse then
+			print("Part found!")
+
+			local inputObj
+			local velocityObj = Instance.new("BodyVelocity", part_to_impulse)
+			
+			model:GetPropertyChangedSignal("Parent"):Connect(function()
+				if not model.Parent then
+					if fling then
+						print("Launched!")
+						velocityObj.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+						velocityObj.Velocity = workspace.CurrentCamera.CFrame.lookVector * strength
+						d:AddItem(velocityObj, 1)
+					else
+						velocityObj.MaxForce = Vector3.new(0,0,0)
+						d:AddItem(velocityObj, 1)
+						print("Cancel Launch!")
+					end
+				end
+			end)
+		end
+	end
+end)
 })
 
 local Paragraph = GrabTab:CreateParagraph({Title = "Grab stuff", Content = "These effects apply when you grab someone"})
